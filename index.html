@@ -3,9 +3,167 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;700&display=swap" rel="stylesheet">
+
     <title>Fluff's Repository</title>
 </head>
 <body>
-    <h1>Test Page</h1>
+    <nav>
+        <ul>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">Languages</a>
+            </li>
+            <li>
+                <a href="#">What I do</a>
+            </li>
+            <li>
+                <a href="#">Projects</a>
+            </li>
+            <li>
+                <a class="btn" href="#">Github</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="intro-section">
+        <h2>Hello, I am</h2>
+        <h1>Morgan Proffitt</h1>
+        <h1>This is where I keep my things</h1>
+        <div class="intro-spacer">
+            <p>
+                I have an interest in electronics, programming and database design. I’m particularly interested in creating web enabled databases using Angular and .NET
+                <p>Go have a little browse...</p>
+            </p>
+        </div>
+    </section>
+
+    <section class="logo-section">
+        <img class="logo-img" src="images/C_Programming_Language.svg" alt="C Logo">
+        <img class="logo-img" src="images/c-sharp-c-seeklogo.com.svg" alt="C# Logo">
+        <img class="logo-img" src="images/Microsoft_.NET_logo.svg" alt=".NET Logo">
+        <img class="logo-img" src="images/Typescript_logo_2020.svg" alt="Typescript Logo">
+        <img class="logo-img" src="images/angular.svg" alt="Angular Logo">
+        <img class="logo-img" src="images/HTML5_Badge.svg" alt="HTML Logo">
+        <img class="logo-img" src="images/CSS3_logo.svg" alt="CSS Logo">
+    </section>
+
+    <section class="lang-section">
+        <div class="lang-entry">
+            <h2>For programming microcontrollers, I use</h2>
+            <h1>C</h1>
+        </div>
+        <div class="lang-entry">
+            <h2>For all my Angular web app and pages</h2>
+            <h1>Typescript</h1>
+        </div>
+        <div class="lang-entry">
+            <h2>For .NET, Unity and all applications
+                <h2>By far my strongest language...</h2>
+            </h2>
+            <h1>C#</h1>
+        </div>
+        <div class="lang-entry">
+            <h2>For web pages I, of course, use...</h2>
+            <h1>HTML & CSS</h1>
+        </div>
+        <div class="lang-entry">
+            <h2>Anything MS Office</h2>
+            <h1>Visual Basic</h1>
+        </div>
+    </section>
+
+    <section class="category-section">
+        <div class="category-container">
+            <h2>What kind of things I do</h2>
+            <div class="category-selector">
+                <button id="category-btn-electronics" class="category-btn category-btn-selected" onclick="showDiv('electronics')">Electronics</button>
+                <button id="category-btn-access" class="category-btn" onclick="showDiv('access')">MS Access</button>
+                <button id="category-btn-applications" class="category-btn" onclick="showDiv('applications')">Applications</button>
+                <button id="category-btn-games" class="category-btn" onclick="showDiv('games')">Games</button>
+                <button id="category-btn-apis" class="category-btn" onclick="showDiv('apis')">APIs & Web Apps</button>
+            </div>
+            <div class="category-content">
+                <div id="category-electronics" class="category-content-open">
+                    <h3>#include &lt;C.h&gt;</h3>
+                    <h4 class="category-content-text">
+                        My entry into programming started in C, programming microcontrollers to do useful things. I made a few things... Like controlling the temperature of my brew so it never gets cold, or a rev counter for my car.
+                        <br><br>
+                        I’ve made lots of little things, and a good few notable ones.
+                    </h4>
+                </div>
+                <div id="category-access">
+                    <h3>Dim rs as Recordset</h3>
+                    <h4 class="category-content-text">
+                        For my current job, I have learnt how to create databases using MS Access, using VBA to do more advanced operations with the applications.
+                        <br><br>
+                        I have created 2 distinct database systems, now critical for the company's daily operations.
+                    </h4></div>
+                <div id="category-applications">
+                    <h3>using C#;</h3>
+                    <h4 class="category-content-text">
+                        Mostly whilst learning C#, I created a few small apps. My most prominent application enabled me to migrate an old database to a new one for the business I work for.
+                    </h4></div>
+                <div id="category-games">
+                    <h3>new Vector3();</h3>
+                    <h4 class="category-content-text">
+                        My inspiration for learning C# in the first place... Unity allowed me to very quickly learn the language and really understand how OOP works.
+                        <br><br>
+                        I have created a small demo game, lots of small game mechanic scripts and a UI driven tool which speeds up development of trigger event based games, such as my Horror Demo game.
+                    </h4></div>
+                <div id="category-apis">
+                    <h3>[HTTPGET()]</h3>
+                    <h4 class="category-content-text">
+                        Starting early 2022, I have been creating many web applications, using the .NET framework and Angular. I begun by following a Udemy course and created a fully functional website and back-end.
+                        <br><br>
+                        Since my first app, I have created lots of little apps, some of which have been online for use.
+                    </h4></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showDiv(div) {
+            document.getElementById('category-electronics').classList.remove('category-content-open');
+            document.getElementById('category-access').classList.remove('category-content-open');
+            document.getElementById('category-applications').classList.remove('category-content-open');
+            document.getElementById('category-games').classList.remove('category-content-open');
+            document.getElementById('category-apis').classList.remove('category-content-open');
+
+            document.getElementById('category-btn-electronics').classList.remove('category-btn-selected');
+            document.getElementById('category-btn-access').classList.remove('category-btn-selected');
+            document.getElementById('category-btn-applications').classList.remove('category-btn-selected');
+            document.getElementById('category-btn-games').classList.remove('category-btn-selected');
+            document.getElementById('category-btn-apis').classList.remove('category-btn-selected');
+
+            switch(div) {
+                case 'electronics':
+                    document.getElementById('category-btn-electronics').classList.add('category-btn-selected');
+                    document.getElementById('category-electronics').classList.add('category-content-open');
+                    break;
+                case 'access':
+                    document.getElementById('category-btn-access').classList.add('category-btn-selected');
+                    document.getElementById('category-access').classList.add('category-content-open');
+                    break;
+                case 'applications':
+                    document.getElementById('category-btn-applications').classList.add('category-btn-selected');
+                    document.getElementById('category-applications').classList.add('category-content-open');
+                    break;
+                case 'games':
+                    document.getElementById('category-btn-games').classList.add('category-btn-selected');
+                    document.getElementById('category-games').classList.add('category-content-open');
+                    break;
+                case 'apis':
+                    document.getElementById('category-btn-apis').classList.add('category-btn-selected');
+                    document.getElementById('category-apis').classList.add('category-content-open');
+                    break;
+            }
+        }
+    </script>
 </body>
 </html>
