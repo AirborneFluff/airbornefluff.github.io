@@ -6,6 +6,7 @@ import {AfterViewInit, Directive, ElementRef, Input} from '@angular/core';
 export class IsVisibleDirective implements AfterViewInit {
   @Input() delay: number = 0;
   @Input() persistent: boolean = false;
+  @Input() stayHidden: boolean = false
   private _rendered: boolean = false;
 
   constructor(private el: ElementRef) {}
@@ -22,6 +23,8 @@ export class IsVisibleDirective implements AfterViewInit {
     if (this.persistent && this._rendered) return;
 
     this.el.nativeElement.style.display = 'none';
+    if (this._rendered && this.stayHidden) return;
+
     this._rendered = false;
 
     if (isIntersecting) {

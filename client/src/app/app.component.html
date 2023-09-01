@@ -4,7 +4,11 @@
       <h1 class="text-7xl animate-fade-in-delay-1">Hello.</h1>
       <h2 class="text-xl animate-fade-in-delay-2 px-1">My name is <span class="text-accent">Morgan</span>, and I am a web developer.</h2>
     </header>
-    <scroll-indicator isVisible [persistent]="false" [delay]="2000"/>
+
+    <main class="text-dark-3 mt-10">
+      <h2 class="text-md animate-fade-in-delay-2 px-1">This is a work in progress... More content incoming.</h2>
+    </main>
+    <scroll-indicator isVisible [stayHidden]="true" [delay]="2000"/>
   </section>
 
   <section class="flex flex-col">
@@ -16,6 +20,6 @@
     <div class="py-10">
       <app-toggle-theme></app-toggle-theme>
     </div>
-    <scroll-indicator isVisible [persistent]="false" [delay]="4000"/>
+    <scroll-indicator isVisible [stayHidden]="true" [delay]="4000"/>
   </section>
 </div>
