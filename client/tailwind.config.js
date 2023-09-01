@@ -42,7 +42,7 @@ module.exports = {
         },
       },
       animation: {
-        'fade-in': 'fade0 1.5s ease-in',
+        'fade-in': 'fade 1.5s ease-in',
         'fade-in-delay-1': 'fade1 1.5s ease-in',
         'fade-in-delay-2': 'fade2 1.5s ease-in',
       },

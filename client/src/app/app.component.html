@@ -1,8 +1,21 @@
 <div class="dark:bg-dark-0 bg-light-0" id="app-theme">
-  <header class="container md:px-16 px-6 pt-40 text-dark-3 ">
-    <h1 class="text-7xl animate-fade-in-delay-1">Hello.</h1>
-    <h2 class="text-xl animate-fade-in-delay-2 px-1">My name is <span class="text-accent">Morgan</span>, and I am a web developer.</h2>
-  </header>
+  <section class="flex flex-col">
+    <header class="text-dark-3">
+      <h1 class="text-7xl animate-fade-in-delay-1">Hello.</h1>
+      <h2 class="text-xl animate-fade-in-delay-2 px-1">My name is <span class="text-accent">Morgan</span>, and I am a web developer.</h2>
+    </header>
+    <scroll-indicator isVisible [persistent]="false" [delay]="2000"/>
+  </section>
 
-  <app-toggle-theme></app-toggle-theme>
+  <section class="flex flex-col">
+    <header class="text-dark-3">
+      <h2 isVisible class="text-xl animate-fade-in px-1">First, let's get you comfortable...</h2>
+      <h2 isVisible class="text-7xl animate-fade-in">Dark or Light?</h2>
+    </header>
+
+    <div class="py-10">
+      <app-toggle-theme></app-toggle-theme>
+    </div>
+    <scroll-indicator isVisible [persistent]="false" [delay]="4000"/>
+  </section>
 </div>
