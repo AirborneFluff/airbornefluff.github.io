@@ -1,0 +1,21 @@
+<div class="flex">
+  <input
+    class="invisible h-0 w-0"
+    type="checkbox"
+    id="theme-toggle"
+    #input
+    [checked]="isToggleChecked$ | async"
+    (change)="onToggleChange()" />
+  <label
+    class="relative flex h-10 w-auto cursor-pointer items-center justify-between rounded-full bg-light-0 px-1.5 shadow-lg dark:bg-dark-1"
+    for="theme-toggle">
+    <mat-icon
+      class="material-icons z-10 !h-8 !w-8 p-0.5 text-gray-100 opacity-100 transition-opacity dark:opacity-0 text-center leading-7"
+      >light_mode</mat-icon>
+    <mat-icon
+      class="material-icons z-10 !h-8 !w-8 p-0.5 text-gray-100 opacity-0 transition-opacity dark:opacity-100 text-center leading-7"
+      >dark_mode</mat-icon>
+    <span
+      class="absolute z-0 h-8 w-8 rounded-full transition-transform dark:translate-x-full bg-warn dark:bg-accent"></span>
+  </label>
+</div>

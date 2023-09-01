@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body .dark-theme {
+  --primary-shade-0: #000C11;
+  --primary-shade-1: #001921;
+  --primary-highlight: #003E54;
+  --primary-text: #80BDD3;
+}
+
+body {
+  --primary-shade-0: #999;
+  --primary-shade-1: #777;
+  --primary-highlight: #555;
+  --warn: #F9A207;
+  --accent: #4C1E97;
+}
+
+html, body { height: 100%; }
+body {
+  overflow-y: hidden;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

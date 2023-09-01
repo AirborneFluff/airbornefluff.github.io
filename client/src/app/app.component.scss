@@ -1,0 +1,19 @@
+section {
+  @apply container px-6 py-36 h-screen snap-start snap-normal;
+}
+
+#app-theme {
+  height: 100vh;
+  overflow-y: scroll;
+
+  @apply snap-mandatory snap-y
+}
+
+@keyframes scrollFadeOut {
+  0% {
+    opacity: 100;
+  }
+  100% {
+    opacity: 0;
+  }
+}
