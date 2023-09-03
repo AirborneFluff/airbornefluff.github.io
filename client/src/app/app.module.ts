@@ -13,7 +13,7 @@ import {MatIconModule} from "@angular/material/icon";
     AppComponent,
     IsVisibleDirective,
     ScrollIndicatorComponent,
-    IsVisibleDirective,
+    IsVisibleDirective
   ],
   imports: [
     BrowserModule,

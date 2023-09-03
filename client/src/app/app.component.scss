@@ -1,19 +1,10 @@
 section {
-  @apply container pt-6 pb-16 sm:py-24 px-6 h-screen snap-start snap-mandatory max-w-screen-lg;
+  @apply container py-24 px-6 h-screen snap-start max-w-screen-lg;
 }
 
 #app-theme {
   height: 100vh;
   overflow-y: scroll;
 
-  @apply snap-mandatory snap-y
-}
-
-@keyframes scrollFadeOut {
-  0% {
-    opacity: 100;
-  }
-  100% {
-    opacity: 0;
-  }
+  @apply snap-proximity snap-y
 }

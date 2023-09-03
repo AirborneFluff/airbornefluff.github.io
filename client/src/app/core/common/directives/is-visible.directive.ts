@@ -14,6 +14,7 @@ export class IsVisibleDirective implements AfterViewInit {
   ngAfterViewInit() {
     const observedElement = this.el.nativeElement.parentElement
     this.el.nativeElement.style.visibility = 'hidden';
+    this.persistent = this.stayHidden ? false : this.persistent;
 
     const observer = new IntersectionObserver(([entry]) => {
       this.renderContents(entry.isIntersecting)

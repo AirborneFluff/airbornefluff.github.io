@@ -1,37 +1,37 @@
-<div class="dark:bg-dark-0 bg-light-0" id="app-theme">
-  <section class="flex flex-col">
-    <header class="text-dark-3">
+<div class="dark:bg-dark-0 bg-light-0 dark:text-dark-3 text-dark-0" id="app-theme">
+
+  <section class="flex flex-col" #themeSection>
+    <header>
       <h2 isVisible class="text-lg sm:text-xl animate-fade-in px-1">first, let's get you comfortable...</h2>
       <h1 isVisible [delay]="750" class="text-5xl sm:text-7xl animate-fade-in">Dark or Light?</h1>
     </header>
 
-    <main class="flex items-center justify-center h-full">
-      <div isVisible [delay]="750" class="py-10 animate-fade-in">
+    <main class="flex items-end justify-center h-full">
+      <div isVisible [delay]="750" class="py-20 animate-fade-in">
         <app-toggle-theme/>
       </div>
     </main>
-    <scroll-indicator isVisible [stayHidden]="true" [delay]="4000"/>
+    <scroll-indicator (click)="scroll(webSkillsSection)" isVisible [stayHidden]="true" [delay]="4000"/>
   </section>
-
-  <section class="flex flex-col">
-    <header class="text-dark-3">
+  <section class="flex flex-col" id="intro-section">
+    <header>
       <h1 isVisible [delay]="1000" class="text-5xl sm:text-7xl animate-fade-in">Hello.</h1>
       <h2 isVisible [delay]="1500" class="text-lg sm:text-xl animate-fade-in px-1">my name is <span class="text-accent">Morgan</span>, and I am a web developer.</h2>
     </header>
 
-    <main class="text-dark-3 mt-10">
+    <main class="mt-10">
       <h2 isVisible [delay]="1750" class="text-md animate-fade-in px-1">This is a work in progress... More content incoming.</h2>
     </main>
-    <scroll-indicator isVisible [stayHidden]="true" [delay]="2000"/>
+    <scroll-indicator (click)="scroll(themeSection)" isVisible [stayHidden]="true" [delay]="2000"/>
   </section>
 
-  <section class="flex flex-col">
-    <header class="text-dark-3">
+  <section class="flex flex-col" #webSkillsSection>
+    <header>
       <h2 isVisible class="text-lg sm:text-xl animate-fade-in px-1">web developer</h2>
       <h1 isVisible [delay]="500" class="text-5xl sm:text-7xl animate-fade-in">Skills</h1>
     </header>
 
-    <main class="text-dark-3 mt-8">
+    <main class="mt-10">
       <div class="flex w-full flex-wrap gap-8 md:justify-between mx-auto">
         <div isVisible [delay]="1000" class="animate-slide-right-fade basis-72">
           <div class="hover:animate-pulse hover:cursor-pointer flex items-center gap-3">

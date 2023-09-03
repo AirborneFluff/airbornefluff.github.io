@@ -15,17 +15,17 @@ export class ThemingService {
   private _themeSubject: BehaviorSubject<Theme> = new BehaviorSubject<Theme>(this.clientPreferredTheme);
 
   theme$: Observable<Theme> = this._themeSubject.pipe(
-    hydrate('app-theme', this.clientPreferredTheme),
+    hydrate<Theme>('app-theme', this.clientPreferredTheme),
     shareReplay(1)
   )
 
   constructor() {
     this._subscriptions.add(
       this.theme$.subscribe(theme => {
+        console.log(theme)
         this.setThemeClass(theme);
       })
     );
-    this.setTheme(Theme.Dark)
   }
 
   public setTheme(theme: Theme) {
@@ -33,6 +33,11 @@ export class ThemingService {
   }
 
   private get clientPreferredTheme(): Theme {
+    const previousTheme = localStorage.getItem('app-theme')?.replaceAll('"', '');
+
+    if (previousTheme == this.themeClass[Theme.Light]) return Theme.Light;
+    if (previousTheme == this.themeClass[Theme.Dark]) return Theme.Dark;
+
     const prefersDark: boolean = window.matchMedia(
       '(prefers-color-scheme: dark)'
     ).matches;

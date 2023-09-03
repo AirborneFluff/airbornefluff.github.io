@@ -15,4 +15,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     console.log()
   }
+
+  scroll(el: HTMLElement) {
+    el.scrollIntoView({ behavior: "smooth"});
+  }
 }
