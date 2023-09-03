@@ -1,5 +1,5 @@
 section {
-  @apply container px-6 py-36 h-screen snap-start snap-normal;
+  @apply container pt-6 pb-16 sm:py-24 px-6 h-screen snap-start snap-mandatory max-w-screen-lg;
 }
 
 #app-theme {

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject, Observable, ReplaySubject, shareReplay, Subscription} from "rxjs";
+import {BehaviorSubject, Observable, shareReplay, Subscription} from "rxjs";
 import {hydrate} from "../common/pipes/hydrate.pipe";
 import {Theme} from "./theme";
 

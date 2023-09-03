@@ -5,7 +5,7 @@ import {AfterViewInit, Directive, ElementRef, Input} from '@angular/core';
 })
 export class IsVisibleDirective implements AfterViewInit {
   @Input() delay: number = 0;
-  @Input() persistent: boolean = false;
+  @Input() persistent: boolean = true;
   @Input() stayHidden: boolean = false
   private _rendered: boolean = false;
 
@@ -13,6 +13,7 @@ export class IsVisibleDirective implements AfterViewInit {
 
   ngAfterViewInit() {
     const observedElement = this.el.nativeElement.parentElement
+    this.el.nativeElement.style.visibility = 'hidden';
 
     const observer = new IntersectionObserver(([entry]) => {
       this.renderContents(entry.isIntersecting)
@@ -22,16 +23,24 @@ export class IsVisibleDirective implements AfterViewInit {
   renderContents(isIntersecting: boolean) {
     if (this.persistent && this._rendered) return;
 
-    this.el.nativeElement.style.display = 'none';
+    this.el.nativeElement.style.visibility = 'hidden';
+
     if (this._rendered && this.stayHidden) return;
 
     this._rendered = false;
 
     if (isIntersecting) {
       setTimeout(() => {
-        this.el.nativeElement.style.display = '';
+        this.resetAnimation();
+        this.el.nativeElement.style.visibility = null;
         this._rendered = true;
       }, this.delay)
     }
+  }
+
+  resetAnimation() {
+    this.el.nativeElement.style.animation = 'none';
+    this.el.nativeElement.offsetHeight; // Trigger Reflow
+    this.el.nativeElement.style.animation = null;
   }
 }

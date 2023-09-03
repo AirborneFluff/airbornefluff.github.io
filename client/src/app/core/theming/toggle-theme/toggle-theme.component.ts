@@ -23,7 +23,6 @@ export class ToggleThemeComponent {
 
   onToggleChange(): void {
     this.theme$.pipe(take(1)).subscribe(theme => {
-      console.log(theme)
       if (theme === Theme.Dark) {
         this.themingService.setTheme(Theme.Light);
         return;

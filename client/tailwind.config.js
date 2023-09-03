@@ -26,6 +26,14 @@ module.exports = {
         accent: '#4C1E97'
       },
       keyframes: {
+        slideRightFade: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateX(-0.5rem)'
+          },
+          '50%': { transform: 'translateX(0)' },
+          '100%': { opacity: '1' },
+        },
         fade: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
@@ -45,6 +53,7 @@ module.exports = {
         'fade-in': 'fade 1.5s ease-in',
         'fade-in-delay-1': 'fade1 1.5s ease-in',
         'fade-in-delay-2': 'fade2 1.5s ease-in',
+        'slide-right-fade': 'slideRightFade 1.5s ease-out',
       },
     },
   },
