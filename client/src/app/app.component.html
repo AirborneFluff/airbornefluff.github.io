@@ -1,4 +1,15 @@
 <div class="dark:bg-dark-0 bg-light-0 dark:text-dark-3 text-dark-0" id="app-theme">
+  <section class="flex flex-col" id="intro-section">
+    <header>
+      <h1 isVisible [delay]="1000" class="text-5xl sm:text-7xl animate-fade-in">Hello.</h1>
+      <h2 isVisible [delay]="1500" class="text-lg sm:text-xl animate-fade-in px-1">my name is <span class="text-accent">Morgan</span>, and I am a web developer.</h2>
+    </header>
+
+    <main class="mt-10">
+      <h2 isVisible [delay]="1750" class="text-md animate-fade-in px-1">This is a work in progress... More content incoming.</h2>
+    </main>
+    <scroll-indicator (click)="scroll(themeSection)" isVisible [stayHidden]="true" [delay]="2000"/>
+  </section>
 
   <section class="flex flex-col" #themeSection>
     <header>
@@ -12,17 +23,6 @@
       </div>
     </main>
     <scroll-indicator (click)="scroll(webSkillsSection)" isVisible [stayHidden]="true" [delay]="4000"/>
-  </section>
-  <section class="flex flex-col" id="intro-section">
-    <header>
-      <h1 isVisible [delay]="1000" class="text-5xl sm:text-7xl animate-fade-in">Hello.</h1>
-      <h2 isVisible [delay]="1500" class="text-lg sm:text-xl animate-fade-in px-1">my name is <span class="text-accent">Morgan</span>, and I am a web developer.</h2>
-    </header>
-
-    <main class="mt-10">
-      <h2 isVisible [delay]="1750" class="text-md animate-fade-in px-1">This is a work in progress... More content incoming.</h2>
-    </main>
-    <scroll-indicator (click)="scroll(themeSection)" isVisible [stayHidden]="true" [delay]="2000"/>
   </section>
 
   <section class="flex flex-col" #webSkillsSection>
