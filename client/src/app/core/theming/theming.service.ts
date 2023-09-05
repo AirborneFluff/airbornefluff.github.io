@@ -1,12 +1,11 @@
-import {Injectable} from '@angular/core';
-import {BehaviorSubject, Observable, shareReplay, Subscription} from "rxjs";
-import {hydrate} from "../common/pipes/hydrate.pipe";
-import {Theme} from "./theme";
+import {Injectable, OnDestroy} from '@angular/core';
+import { BehaviorSubject, Observable, shareReplay, Subscription, tap } from "rxjs";
+import { Theme } from "./theme";
 
 @Injectable({
   providedIn: 'root'
 })
-export class ThemingService {
+export class ThemingService implements OnDestroy {
   private readonly themeClass = {
     [Theme.Light]: 'light-theme',
     [Theme.Dark]: 'dark-theme'
@@ -15,17 +14,20 @@ export class ThemingService {
   private _themeSubject: BehaviorSubject<Theme> = new BehaviorSubject<Theme>(this.clientPreferredTheme);
 
   theme$: Observable<Theme> = this._themeSubject.pipe(
-    hydrate<Theme>('app-theme', this.clientPreferredTheme),
+    tap(theme => {
+      localStorage.setItem('app-theme', this.themeClass[theme])
+    }),
     shareReplay(1)
   )
 
   constructor() {
     this._subscriptions.add(
-      this.theme$.subscribe(theme => {
-        console.log(theme)
-        this.setThemeClass(theme);
-      })
+      this.theme$.subscribe(theme => this.setThemeClass(theme))
     );
+  }
+
+  ngOnDestroy() {
+    this._subscriptions.unsubscribe();
   }
 
   public setTheme(theme: Theme) {
