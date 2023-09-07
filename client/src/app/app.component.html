@@ -5,8 +5,18 @@
       <h2 isVisible [delay]="1500" class="text-lg sm:text-xl animate-fade-in px-1">my name is <span class="text-accent">Morgan</span>, and I am a web developer.</h2>
     </header>
 
-    <main class="mt-10">
+    <div class="mt-10">
       <h2 isVisible [delay]="1750" class="text-md animate-fade-in px-1">This is a work in progress! More content IS coming...</h2>
-    </main>
+    </div>
+  </section>
+  
+  <section class="flex flex-col" id="intro-section">
+    <header>
+      <h1 isVisible [delay]="1000" class="text-5xl sm:text-7xl animate-fade-in">Dark or Light?</h1>
+    </header>
+
+    <div class="mt-10">
+      <app-toggle-theme isVisible [delay]="1500" [scale]="'sm'" class="animate-fade-in"/>
+    </div>
   </section>
 </div>

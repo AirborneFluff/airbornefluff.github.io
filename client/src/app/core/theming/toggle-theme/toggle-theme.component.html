@@ -1,4 +1,6 @@
-<div class="flex">
+<div class="flex"
+  [ngClass]="{ 'scale-50' : scale === 'sm',
+               'scale-75' : scale === 'md' }">
   <input
     class="invisible h-0 w-0"
     type="checkbox"
