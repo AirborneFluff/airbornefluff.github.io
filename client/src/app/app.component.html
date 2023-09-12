@@ -8,6 +8,8 @@
     <main class="mt-10">
       <h2 isVisible [delay]="1750" class="text-md animate-fade-in px-1">This is a work in progress... More content incoming.</h2>
     </main>
+
+    <div class="mt-20" (click)="dialog.open(TestModalComponent)">Click Me</div>
     <scroll-indicator (click)="scroll(themeSection)" isVisible [persistent]="true" [delay]="2000"/>
   </section>
 

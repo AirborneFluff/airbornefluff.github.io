@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ThemingService} from "./core/theming/theming.service";
+import {DialogService} from "./core/dialog/dialog.service";
+import {TestModalComponent} from "./features/test-modal/test-modal.component";
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,7 @@ export class AppComponent implements OnInit {
   title = 'client';
 
 
-  constructor(private theme: ThemingService) {
+  constructor(public dialog: DialogService) {
   }
   ngOnInit(): void {
     console.log()
@@ -19,4 +21,6 @@ export class AppComponent implements OnInit {
   scroll(el: HTMLElement) {
     el.scrollIntoView({ behavior: "smooth"});
   }
+
+  protected readonly TestModalComponent = TestModalComponent;
 }
