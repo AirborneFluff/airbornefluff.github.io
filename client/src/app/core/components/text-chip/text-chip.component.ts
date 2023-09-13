@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-text-chip',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./text-chip.component.scss']
 })
 export class TextChipComponent {
+  @Input() special: boolean = false;
 
 }
