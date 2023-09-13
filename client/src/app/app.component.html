@@ -1,12 +1,69 @@
 <div class="dark:bg-dark-0 bg-light-0 dark:text-dark-3 text-dark-0" id="app-theme">
-  <section class="flex flex-col" id="intro-section">
+  <section id="intro-section">
     <header>
-      <h1 isVisible [delay]="1000" class="text-5xl sm:text-7xl animate-fade-in">Hello.</h1>
-      <h2 isVisible [delay]="1500" class="text-lg sm:text-xl animate-fade-in px-1">my name is <span class="text-accent">Morgan</span>, and I am a web developer.</h2>
+      <h1 isVisible [delay]="1000" class="text-6xl sm:text-8xl animate-fade-in">Hello.</h1>
+      <h2 isVisible [delay]="1500" class="text-xl sm:text-1xl animate-fade-in">I am <span class="text-gradient">Morgan</span>, a web developer.</h2>
     </header>
 
-    <main class="mt-10">
-      <h2 isVisible [delay]="1750" class="text-md animate-fade-in px-1">This is a work in progress! More content IS coming...</h2>
-    </main>
+    <div class="mt-10">
+      <app-block-text isVisible [delay]="1750" class="animate-fade-in">
+        Bridging the gap between creativity and technology, using my experience in Angular, .NET, and a variety of languages, including C#, HTML, CSS, and TypeScript.
+      </app-block-text>
+    </div>
+
+    <div class="mt-10">
+      <app-block-text isVisible [delay]="1750" class="animate-fade-in">
+        My passion for programming is the driving force behind my love for web design, with numerous examples in my portfolio.
+      </app-block-text>
+    </div>
   </section>
+
+  <section>
+    <header>
+      <h1 isVisible [delay]="500" class="text-5xl sm:text-7xl animate-fade-in">Knowledge</h1>
+    </header>
+
+    <div isVisible [delay]="750" class="mt-10 animate-slide-right-fade">
+      <h2 class="mb-2">frameworks</h2>
+      <div class="flex gap-1 w-full flex-wrap [&>*]:basis-12">
+        <app-text-chip [special]="true">Angular</app-text-chip>
+        <app-text-chip>.NET</app-text-chip>
+      </div>
+
+      <h2 class="mt-6 mb-2">languages</h2>
+      <div class="flex gap-1 w-full flex-wrap [&>*]:basis-12">
+        <app-text-chip [special]="true">Typescript</app-text-chip>
+        <app-text-chip [special]="true">C#</app-text-chip>
+        <app-text-chip [special]="true">C</app-text-chip>
+        <app-text-chip>HTML</app-text-chip>
+        <app-text-chip>CSS</app-text-chip>
+        <app-text-chip>C++</app-text-chip>
+        <app-text-chip>VBA</app-text-chip>
+      </div>
+
+      <h2 class="mt-6 mb-2">libraries</h2>
+      <div class="flex gap-1 w-full flex-wrap [&>*]:basis-12">
+        <app-text-chip>Tailwind</app-text-chip>
+        <app-text-chip>Bootstrap</app-text-chip>
+        <app-text-chip>RxJS</app-text-chip>
+      </div>
+
+      <h2 class="mt-6 mb-2">technologies</h2>
+      <div class="flex gap-1 w-full flex-wrap [&>*]:basis-12">
+        <app-text-chip [special]="true">Github</app-text-chip>
+        <app-text-chip [special]="true">Figma</app-text-chip>
+        <app-text-chip [special]="true">Fusion 360</app-text-chip>
+        <app-text-chip>Azure</app-text-chip>
+        <app-text-chip>Node</app-text-chip>
+      </div>
+    </div>
+  </section>
+
+  <footer class="fixed bottom-0 w-full">
+    <div class="container flex max-w-screen-md">
+      <div class="m-2 sm:m-5">
+        <app-toggle-theme/>
+      </div>
+    </div>
+  </footer>
 </div>

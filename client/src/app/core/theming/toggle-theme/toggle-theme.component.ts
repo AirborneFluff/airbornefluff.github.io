@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {map, Observable, take} from "rxjs";
 import {Theme} from "../theme";
@@ -13,6 +13,7 @@ import {MatIconModule} from "@angular/material/icon";
   styleUrls: ['./toggle-theme.component.scss']
 })
 export class ToggleThemeComponent {
+  @Input() scale: 'sm' | 'md' | 'lg' = 'lg';
   theme$: Observable<Theme> = this.themingService.theme$;
 
   isToggleChecked$: Observable<boolean> = this.theme$.pipe(

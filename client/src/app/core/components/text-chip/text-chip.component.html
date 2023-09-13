@@ -1,0 +1,7 @@
+<div class="border-2 dark:border-dark-1 border-light-1 py-1 px-2 rounded-md text-center">
+  <small
+    [ngClass]="{'text-gradient font-medium' : special, 'dark:text-dark-3 text-black font-light' : !special}"
+    class="text-lg pointer-events-none whitespace-nowrap">
+    <ng-content/>
+  </small>
+</div>

@@ -1,6 +1,7 @@
 import {Injectable, OnDestroy} from '@angular/core';
-import { BehaviorSubject, Observable, shareReplay, Subscription, tap } from "rxjs";
-import { Theme } from "./theme";
+import {BehaviorSubject, Observable, shareReplay, Subscription, tap} from "rxjs";
+import {Theme} from "./theme";
+import {Meta} from "@angular/platform-browser";
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class ThemingService implements OnDestroy {
     shareReplay(1)
   )
 
-  constructor() {
+  constructor(private meta: Meta) {
     this._subscriptions.add(
       this.theme$.subscribe(theme => this.setThemeClass(theme))
     );
@@ -55,6 +56,7 @@ export class ThemingService implements OnDestroy {
     body.classList.remove(...Object.values(this.themeClass));
     body.classList.add(this.themeClass[theme]);
 
+    this.setHTMLMeta(theme);
 
     const appTheme = document.getElementById('app-theme');
 
@@ -65,5 +67,11 @@ export class ThemingService implements OnDestroy {
 
     appTheme.classList.remove(...Object.values(this.themeClass));
     appTheme.classList.add(themeClass);
+  }
+
+  private setHTMLMeta(theme: Theme) {
+    let color: string = 'white'
+    if (theme == Theme.Dark) color = '#000C11';
+    this.meta.updateTag({ content: color }, 'name=theme-color');
   }
 }

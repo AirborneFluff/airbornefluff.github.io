@@ -26,6 +26,14 @@ module.exports = {
         accent: '#4C1E97'
       },
       keyframes: {
+        jumpFade: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(-0.5rem)'
+          },
+          '50%': { transform: 'translateY(0)' },
+          '100%': { opacity: '1' }
+        },
         slideRightFade: {
           '0%': {
             opacity: '0',
@@ -54,6 +62,7 @@ module.exports = {
         'fade-in-delay-1': 'fade1 1.5s ease-in',
         'fade-in-delay-2': 'fade2 1.5s ease-in',
         'slide-right-fade': 'slideRightFade 1.5s ease-out',
+        'jump-fade': 'jumpFade 1.5s ease-out',
       },
     },
   },

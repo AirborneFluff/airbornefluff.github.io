@@ -21,5 +21,9 @@ html, body { height: 100%; }
 body {
   overflow-y: hidden;
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Inconsolata', monospace;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500;
 }
