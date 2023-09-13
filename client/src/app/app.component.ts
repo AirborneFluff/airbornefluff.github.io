@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ThemingService} from "./core/theming/theming.service";
 import {DialogService} from "./core/dialog/dialog.service";
 import {TestModalComponent} from "./features/test-modal/test-modal.component";
@@ -8,19 +8,14 @@ import {TestModalComponent} from "./features/test-modal/test-modal.component";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'client';
-
-
-  constructor(public dialog: DialogService) {
-  }
-  ngOnInit(): void {
-    console.log()
+  @ViewChild('dev')
+  set devSection(val: ElementRef) {
+    this.scroll(val.nativeElement);
   }
 
   scroll(el: HTMLElement) {
     el.scrollIntoView({ behavior: "smooth"});
   }
-
-  protected readonly TestModalComponent = TestModalComponent;
 }

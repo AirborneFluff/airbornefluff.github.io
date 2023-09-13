@@ -8,6 +8,8 @@ import { IsVisibleDirective } from './core/common/directives/is-visible.directiv
 import { ScrollIndicatorComponent } from './core/components/scroll-indicator/scroll-indicator.component';
 import { MatIconModule } from "@angular/material/icon";
 import { TestModalComponent } from './features/test-modal/test-modal.component';
+import { BlockTextComponent } from './core/components/block-text/block-text.component';
+import { TextChipComponent } from './core/components/text-chip/text-chip.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { TestModalComponent } from './features/test-modal/test-modal.component';
     IsVisibleDirective,
     ScrollIndicatorComponent,
     IsVisibleDirective,
-    TestModalComponent
+    TestModalComponent,
+    BlockTextComponent,
+    TextChipComponent
   ],
   imports: [
     BrowserModule,

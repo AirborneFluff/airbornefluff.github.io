@@ -35,7 +35,7 @@ export class IsVisibleDirective implements AfterViewInit {
         this.resetAnimation();
         this.el.nativeElement.style.visibility = null;
         this._rendered = true;
-      }, this.delay)
+      }, 0)//this.delay)
     }
   }
 
