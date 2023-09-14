@@ -18,7 +18,7 @@ export class IsVisibleDirective implements AfterViewInit {
 
     const observer = new IntersectionObserver(([entry]) => {
       this.renderContents(entry.isIntersecting)
-    }, { threshold: 0, rootMargin: '0px 0px -50% 0px' })
+    }, { threshold: 0, rootMargin: '0px 0px -15% 0px' })
     observer.observe(observedElement)
   }
   renderContents(isIntersecting: boolean) {
