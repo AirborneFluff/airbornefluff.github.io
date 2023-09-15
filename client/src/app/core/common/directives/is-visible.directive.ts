@@ -1,45 +1,48 @@
-import {AfterViewInit, Directive, ElementRef, Input} from '@angular/core';
+import {AfterViewInit, Directive, ElementRef, Input, Renderer2} from '@angular/core';
 
 @Directive({
   selector: '[isVisible]'
 })
 export class IsVisibleDirective implements AfterViewInit {
+  private _hidden: boolean = false;
   @Input() delay: number = 0;
-  @Input() persistent: boolean = true;
-  @Input() stayHidden: boolean = false
-  private _rendered: boolean = false;
-
-  constructor(private el: ElementRef) {}
+  constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   ngAfterViewInit() {
-    const observedElement = this.el.nativeElement.parentElement
-    this.el.nativeElement.style.visibility = 'hidden';
-    this.persistent = this.stayHidden ? false : this.persistent;
+    const observedElement = this.el.nativeElement;
+    this.hide();
 
     const observer = new IntersectionObserver(([entry]) => {
       this.renderContents(entry.isIntersecting)
-    }, { threshold: 0, rootMargin: '0px 0px -15% 0px' })
+    }, { threshold: 0, rootMargin: '0px 0px 40px 0px' })
     observer.observe(observedElement)
   }
   renderContents(isIntersecting: boolean) {
-    if (this.persistent && this._rendered) return;
-
-    this.el.nativeElement.style.visibility = 'hidden';
-
-    if (this._rendered && this.stayHidden) return;
-
-    this._rendered = false;
+    if (!this.hidden) return;
 
     if (isIntersecting) {
       setTimeout(() => {
         this.resetAnimation();
-        this.el.nativeElement.style.visibility = null;
-        this._rendered = true;
+        this.show();
       }, this.delay)
     }
   }
 
+  private hide() {
+    this.renderer.setStyle(this.el.nativeElement, 'visibility', 'hidden');
+    this._hidden = true;
+  }
+  private show() {
+    this.renderer.removeStyle(this.el.nativeElement, 'visibility');
+    this._hidden = false;
+  }
+  private get hidden(): boolean {
+    return this._hidden;
+  }
+
   resetAnimation() {
+    this.renderer.setStyle(this.el.nativeElement, 'animation-fill-mode', 'forwards');
+
     this.el.nativeElement.style.animation = 'none';
     this.el.nativeElement.offsetHeight; // Trigger Reflow
     this.el.nativeElement.style.animation = null;

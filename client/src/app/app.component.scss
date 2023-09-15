@@ -1,12 +1,15 @@
 section {
-  @apply container pt-12 sm:pt-16 px-6 snap-start max-w-screen-md flex flex-col mb-96;
+  @apply container px-6 max-w-screen-md flex flex-col;
   min-height: 100svh;
+}
+
+header {
+  @apply snap-start pt-8 sm:pt-16;
 }
 
 #app-theme {
   height: 100svh;
   overflow-y: auto;
-  padding-bottom: 100px;
 
-  @apply sm:snap-none snap-proximity snap-always snap-y
+  @apply sm:snap-none snap-mandatory snap-always snap-y
 }
