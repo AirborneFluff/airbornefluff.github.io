@@ -28,15 +28,18 @@ module.exports = {
       keyframes: {
         jumpFade: {
           '0%': {
+            display: 'block',
             opacity: '0',
-            transform: 'translateY(-0.5rem)'
+            transform: 'translateY(1rem)'
           },
-          '50%': { transform: 'translateY(0)' },
+          '50%': {
+            display: 'block',
+            transform: 'translateY(0)' },
           '100%': { opacity: '1' }
         },
         slideRightFade: {
           '0%': {
-            opacity: '0',
+            opacity: '1',
             transform: 'translateX(-0.5rem)'
           },
           '50%': { transform: 'translateX(0)' },
@@ -45,22 +48,10 @@ module.exports = {
         fade: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
-        },
-        fade1: {
-          '0%': { opacity: '0' },
-          '50%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        fade2: {
-          '0%': { opacity: '0' },
-          '75%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
+        }
       },
       animation: {
         'fade-in': 'fade 1.5s ease-in',
-        'fade-in-delay-1': 'fade1 1.5s ease-in',
-        'fade-in-delay-2': 'fade2 1.5s ease-in',
         'slide-right-fade': 'slideRightFade 1.5s ease-out',
         'jump-fade': 'jumpFade 1.5s ease-out',
       },
