@@ -12,6 +12,7 @@ export class AppComponent {
   title = 'client';
   @ViewChild('dev')
   set devSection(val: ElementRef) {
+    if (!val) return;
     this.scroll(val.nativeElement);
   }
 

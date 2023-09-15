@@ -4,12 +4,12 @@ section {
 }
 
 header {
-  @apply snap-start pt-8 sm:pt-16;
+  //@apply snap-start pt-8 sm:pt-16;
 }
 
 #app-theme {
   height: 100svh;
   overflow-y: auto;
 
-  @apply sm:snap-none snap-mandatory snap-always snap-y
+  //@apply sm:snap-none snap-mandatory snap-always snap-y
 }
