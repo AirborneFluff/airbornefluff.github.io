@@ -1,7 +1,7 @@
 <div class="dark:bg-dark-0 bg-light-0 dark:text-dark-3 text-dark-0" id="app-theme">
   <section>
     <header class="mb-10">
-      <h1 isVisible [delay]="500" class="text-6xl sm:text-8xl mb-4 animate-fade-in">Hello.</h1>
+      <h1 isVisible [delay]="500" class="text-6xl sm:text-8xl mb-8 animate-fade-in">Hello.</h1>
       <h2 isVisible [delay]="250" class="text-4xl sm:text-6xl animate-fade-in">I am <span class="text-gradient">Morgan Proffitt</span>, a web developer.</h2>
     </header>
 
@@ -63,6 +63,19 @@
         <app-text-chip>Node</app-text-chip>
       </div>
     </div>
+  </section>
+
+  <section #dev>
+    <header>
+      <h1 isVisible [skipQueue]="true" class="text-5xl sm:text-7xl animate-fade-in">Projects</h1>
+    </header>
+
+    <app-tab-group [tabIndex]="3">
+      <app-tab label="tab 1">Hello Tabs1</app-tab>
+      <app-tab label="tab 2">Hello Tabs2</app-tab>
+      <app-tab label="tab 3">Hello Tabs3</app-tab>
+    </app-tab-group>
+
   </section>
 
   <footer class="fixed bottom-0 w-full">

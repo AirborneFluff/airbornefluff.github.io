@@ -8,17 +8,17 @@ import {Observable} from "rxjs";
 export class IsVisibleDirective implements AfterViewInit {
   private _hidden: boolean = false;
   @Input() delay: number = 0;
+  @Input() skipQueue: boolean = false;
   constructor(private el: ElementRef, private renderer: Renderer2, private queue: AnimationQueueService) {}
 
   ngAfterViewInit() {
     const observedElement = this.el.nativeElement;
     this.hide();
-    console.log(this.el)
 
     const observer = new IntersectionObserver(([entry]) => {
       if (!this._hidden) return;
       if (!entry.isIntersecting) return;
-      this.queue.add(this.getRenderObservable(), this.el)
+      this.queue.add(this.getRenderObservable(), this.skipQueue ? this.getSkipQueueElement() : this.el);
     }, { threshold: 0, rootMargin: '0px 0px -96px 0px' })
     observer.observe(observedElement)
   }
@@ -32,6 +32,10 @@ export class IsVisibleDirective implements AfterViewInit {
         subscriber.complete();
       }, this.delay)
     })
+  }
+
+  getSkipQueueElement(): ElementRef {
+    return new ElementRef({offsetTop : 0});
   }
 
   private hide() {
