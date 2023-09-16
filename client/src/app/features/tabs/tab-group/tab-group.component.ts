@@ -1,10 +1,10 @@
 import {
   AfterViewInit, ChangeDetectorRef,
   Component,
-  ContentChildren,
+  ContentChildren, ElementRef,
   Input, OnDestroy,
   QueryList,
-  TemplateRef
+  TemplateRef, ViewChild
 } from '@angular/core';
 import { TabComponent } from "../tab/tab.component";
 import { Subject, Subscription, switchMap, tap } from "rxjs";
@@ -22,6 +22,7 @@ export class TabGroupComponent implements AfterViewInit, OnDestroy {
     this._tabIndex = val;
   }
   @ContentChildren(TabComponent) tabs!: QueryList<TabComponent>;
+  @ViewChild('tabContainer') tabContainer!: ElementRef;
 
   selectedTab$: Subject<TabComponent> = new Subject<TabComponent>();
   tabContent$: Subject<TemplateRef<any>> = new Subject<TemplateRef<any>>();
@@ -40,6 +41,8 @@ export class TabGroupComponent implements AfterViewInit, OnDestroy {
     this.tabs.forEach(tab => {
       if (this._tabIndex == index++) this.switchTab(tab);
     });
+
+    console.log(this.tabContainer)
   }
 
   ngOnDestroy(): void {
@@ -49,5 +52,9 @@ export class TabGroupComponent implements AfterViewInit, OnDestroy {
   switchTab(next: TabComponent) {
     this.selectedTab$.next(next);
     this.changeDetection.detectChanges();
+  }
+
+  isHorizontalScroll(el: HTMLElement) {
+    return el.scrollWidth > el.offsetWidth;
   }
 }
