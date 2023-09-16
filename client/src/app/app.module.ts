@@ -10,6 +10,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { TestModalComponent } from './features/test-modal/test-modal.component';
 import { BlockTextComponent } from './core/components/block-text/block-text.component';
 import { TextChipComponent } from './core/components/text-chip/text-chip.component';
+import { TabsModule } from "./features/tabs/tabs.module";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TextChipComponent } from './core/components/text-chip/text-chip.compone
     BrowserModule,
     ToggleThemeComponent,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    TabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

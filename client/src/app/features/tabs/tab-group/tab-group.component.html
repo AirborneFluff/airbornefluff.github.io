@@ -1,0 +1,16 @@
+<div class="w-full dark:bg-dark-1 bg-light-1 rounded-xl" id="tab-group">
+  <div class="flex justify-between">
+    <div [ngClass]="{'bg-accent bg-opacity-5' : (selectedTab$ | async) == tab}"
+          class="text-center flex-grow flex-shrink basis-0 w-0 pt-2 text-sm sm:text-lg cursor-pointer" *ngFor="let tab of tabs" (click)="switchTab(tab)">
+      <div class="mb-2">{{tab.label}}</div>
+      <div [ngClass]="{'opacity-90' : (selectedTab$ | async) == tab}"
+        class="w-full h-[2px] bg-accent opacity-50"></div>
+    </div>
+  </div>
+
+  <div class="w-full px-6 py-2 content-container">
+    <ng-container *ngIf="tabContent$ | async as content">
+      <ng-container *ngTemplateOutlet="content"></ng-container>
+    </ng-container>
+  </div>
+</div>
