@@ -65,20 +65,37 @@
     </div>
   </section>
 
-  <section #dev>
+  <section>
     <header>
-      <h1 isVisible [skipQueue]="true" class="text-5xl sm:text-7xl animate-fade-in">Projects</h1>
+      <h1 isVisible class="text-5xl sm:text-7xl animate-fade-in">Projects</h1>
     </header>
-
-    <app-tab-group class="mt-12" [tabIndex]="3">
+    <app-tab-group isVisible [delay]="300" class="mt-12 animate-fade-in" [tabIndex]="0">
       <app-tab label="Web">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, delectus harum ipsum minima obcaecati praesentium quasi quos. Distinctio eaque laudantium voluptas? Dignissimos, excepturi explicabo fugiat, harum impedit magnam mollitia odit quas reprehenderit rerum temporibus vel, voluptatum! At beatae esse iusto, libero natus tempore temporibus? Explicabo incidunt minus porro repellat tempora.</p>
-      </app-tab>
-      <app-tab label="Games">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, ad architecto aut blanditiis commodi consequatur deserunt dolor ea earum eligendi est expedita hic id incidunt inventore ipsa iure magni maxime nesciunt nihil nostrum obcaecati praesentium quae quisquam reiciendis rerum sequi sit sunt ullam vitae. Aliquam animi architecto assumenda enim exercitationem incidunt iure iusto nobis. Aliquam autem consequatur dignissimos dolores eius excepturi laboriosam minus molestiae nisi non obcaecati, pariatur reiciendis sed similique velit veritatis voluptas? Architecto culpa cum, dolorum eaque enim exercitationem incidunt ipsum laudantium magnam, minima mollitia nam neque optio pariatur perspiciatis provident quo quod similique soluta totam vel voluptatibus?</app-tab>
-      <app-tab label="Electronics">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, ratione?</app-tab>
-      <app-tab label="Databases">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, ratione?</app-tab>
-    </app-tab-group>
+        <p class="mb-16">With a primary emphasis on web applications, here is a showcase of some of my noteworthy projects.</p>
 
+        <project-showcase>
+          <showcase-title>Dating App</showcase-title>
+          <showcase-description>
+            My first app, created from a Udemy course
+            <br/>
+            A display of both frontend and backend development, highlighting core web development concepts.
+          </showcase-description>
+          <showcase-skills-group>
+            <showcase-skill-chip>HTML</showcase-skill-chip>
+            <showcase-skill-chip>Bootstrap</showcase-skill-chip>
+            <showcase-skill-chip>Github</showcase-skill-chip>
+            <showcase-skill-chip>C#</showcase-skill-chip>
+            <showcase-skill-chip>.NET</showcase-skill-chip>
+          </showcase-skills-group>
+          <showcase-links-group>
+            <showcase-link label="github" href="https://github.com/AirborneFluff/Dating-App"/>
+          </showcase-links-group>
+        </project-showcase>
+      </app-tab>
+      <app-tab label="Games">Content coming soon</app-tab>
+      <app-tab label="Electronics">Content coming soon</app-tab>
+      <app-tab label="Databases">Content coming soon</app-tab>
+    </app-tab-group>
   </section>
 
   <footer class="fixed bottom-0 w-full">
