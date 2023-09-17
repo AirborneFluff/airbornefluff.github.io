@@ -1,6 +1,10 @@
 section {
   @apply container px-6 max-w-screen-md flex flex-col;
-  min-height: 100svh;
+  min-height: max(100svh, 95vh);
+}
+
+header {
+  @apply pt-8 sm:pt-16;
 }
 
 header {
@@ -8,8 +12,6 @@ header {
 }
 
 #app-theme {
-  height: 100svh;
+  height: max(100svh, 95vh);
   overflow-y: auto;
-
-  @apply sm:snap-none snap-mandatory snap-always snap-y
 }
