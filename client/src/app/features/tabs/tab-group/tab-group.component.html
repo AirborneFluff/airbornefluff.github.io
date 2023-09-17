@@ -1,8 +1,7 @@
 <div class="w-full dark:bg-dark-1 bg-light-1 rounded-xl" id="tab-group">
   <div class="flex">
     <div *ngIf="isScroll$ | async" (click)="scrollBack()" class="px-3 py-2 cursor-pointer select-none"><</div>
-<!--    <div class="flex-grow">-->
-      <div class="flex justify-between overflow-x-scroll scroll-container snap-mandatory snap-x" #tabContainer>
+      <div class="flex-grow flex justify-between overflow-x-scroll scroll-container snap-mandatory snap-x" #tabContainer>
         <div class="text-center flex-grow basis-1/3 sm:basis-1/4 flex-shrink-0 pt-2 text-sm sm:text-lg cursor-pointer snap-start"
              [ngClass]="{'bg-accent bg-opacity-5' : (selectedTab$ | async) == tab}"
              *ngFor="let tab of tabs" (click)="switchTab(tab)">
@@ -10,8 +9,7 @@
           <div [ngClass]="{'opacity-90' : (selectedTab$ | async) == tab}"
                class="w-full h-[2px] bg-accent opacity-50"></div>
         </div>
-<!--      </div>-->
-    </div>
+      </div>
     <div *ngIf="isScroll$ | async" (click)="scrollForwards()" class="px-3 py-2 cursor-pointer select-none">></div>
   </div>
 
