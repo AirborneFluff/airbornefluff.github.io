@@ -46,15 +46,6 @@ export class IsVisibleDirective implements AfterViewInit {
     this.renderer.removeStyle(this.el.nativeElement, 'visibility');
     this._hidden = false;
   }
-
-  private hide() {
-    this.renderer.setStyle(this.el.nativeElement, 'visibility', 'hidden');
-    this._hidden = true;
-  }
-  private show() {
-    this.renderer.removeStyle(this.el.nativeElement, 'visibility');
-    this._hidden = false;
-  }
   private get hidden(): boolean {
     return this._hidden;
   }
