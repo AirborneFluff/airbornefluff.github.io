@@ -65,15 +65,15 @@
     </div>
   </section>
 
-  <section #dev>
-    <header>
-      <h2 class="text-xl sm:text-3xl opacity-50 animate-fade-in leading-confined">web development</h2>
-      <h1 class="text-5xl sm:text-7xl animate-fade-in leading-confined">Projects</h1>
+  <section>
+    <header isVisible [delay]="300" class="animate-fade-in">
+      <h2 isVisible [delay]="150" class="text-xl sm:text-3xl opacity-50 animate-fade-in leading-confined">web development</h2>
+      <h1 class="text-5xl sm:text-7xl leading-confined">Projects</h1>
     </header>
 
-    <p class="mt-4 sm:mt-16">With a primary emphasis on web applications, here is a showcase of some of my noteworthy projects.</p>
+    <p isVisible [delay]="300" class="animate-jump-fade mt-4 sm:mt-16">With a primary emphasis on web applications, here is a showcase of some of my noteworthy projects.</p>
 
-    <app-tab-group class="mt-4 sm:mt-12 animate-fade-in" [tabIndex]="0">
+    <app-tab-group isVisible [delay]="300" class="mt-4 sm:mt-12 animate-slide-right-fade" [tabIndex]="0">
       <app-tab label="Dating App">
         <project-dating-app/>
       </app-tab>
@@ -92,7 +92,7 @@
   <footer class="fixed bottom-0 w-full">
     <div class="container flex max-w-screen-md">
       <div class="m-2 sm:m-8">
-        <app-toggle-theme/>
+<!--        <app-toggle-theme/>-->
       </div>
     </div>
   </footer>

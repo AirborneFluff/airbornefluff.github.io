@@ -1,4 +1,6 @@
 import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
+import {ThemingService} from "./core/theming/theming.service";
+import {Theme} from "./core/theming/theme";
 
 @Component({
   selector: 'app-root',
@@ -7,6 +9,10 @@ import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 })
 export class AppComponent implements AfterViewInit {
   @ViewChild('dev') devSection!: ElementRef;
+
+  constructor(private theme: ThemingService) {
+    this.theme.setTheme(Theme.Dark);
+  }
 
   scroll(el: HTMLElement) {
     el.scrollIntoView({ behavior: "smooth"});
