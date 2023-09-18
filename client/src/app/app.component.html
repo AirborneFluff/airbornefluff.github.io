@@ -65,34 +65,21 @@
     </div>
   </section>
 
-  <section>
+  <section #dev>
     <header>
-      <h1 isVisible class="text-5xl sm:text-7xl animate-fade-in">Projects</h1>
+      <h2 class="text-xl sm:text-3xl opacity-50 animate-fade-in leading-confined">web development</h2>
+      <h1 class="text-5xl sm:text-7xl animate-fade-in leading-confined">Projects</h1>
     </header>
-    <app-tab-group isVisible [delay]="300" class="mt-12 animate-fade-in" [tabIndex]="0">
-      <app-tab label="Web">
-        <p class="mb-16">With a primary emphasis on web applications, here is a showcase of some of my noteworthy projects.</p>
 
-        <project-showcase>
-          <showcase-title>Dating App</showcase-title>
-          <showcase-description>
-            My first app, created from a Udemy course
-            <br/>
-            A display of both frontend and backend development, highlighting core web development concepts.
-          </showcase-description>
-          <showcase-skills-group>
-            <showcase-skill-chip>HTML</showcase-skill-chip>
-            <showcase-skill-chip>Bootstrap</showcase-skill-chip>
-            <showcase-skill-chip>Github</showcase-skill-chip>
-            <showcase-skill-chip>C#</showcase-skill-chip>
-            <showcase-skill-chip>.NET</showcase-skill-chip>
-          </showcase-skills-group>
-          <showcase-links-group>
-            <showcase-link label="github" href="https://github.com/AirborneFluff/Dating-App"/>
-          </showcase-links-group>
-        </project-showcase>
+    <p class="mt-16">With a primary emphasis on web applications, here is a showcase of some of my noteworthy projects.</p>
+
+    <app-tab-group class="mt-8 animate-fade-in" [tabIndex]="0">
+      <app-tab label="Dating App">
+        <project-dating-app/>
       </app-tab>
-      <app-tab label="Games">Content coming soon</app-tab>
+      <app-tab label="Energy Storage App">
+        <project-energy-storage-app/>
+      </app-tab>
       <app-tab label="Electronics">Content coming soon</app-tab>
       <app-tab label="Databases">Content coming soon</app-tab>
     </app-tab-group>
