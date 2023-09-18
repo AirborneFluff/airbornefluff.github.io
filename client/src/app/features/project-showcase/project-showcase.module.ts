@@ -8,6 +8,7 @@ import { ShowcaseSkillChipComponent } from './showcase-skill-chip/showcase-skill
 import { ShowcaseDescriptionComponent } from './showcase-description/showcase-description.component';
 import { ShowcaseLinksGroupComponent } from './showcase-links-group/showcase-links-group.component';
 import { ShowcaseLinkComponent } from './showcase-link/showcase-link.component';
+import { ShowcaseSubtitleComponent } from './showcase-subtitle/showcase-subtitle.component';
 
 
 
@@ -20,7 +21,8 @@ import { ShowcaseLinkComponent } from './showcase-link/showcase-link.component';
         ShowcaseSkillChipComponent,
         ShowcaseDescriptionComponent,
         ShowcaseLinksGroupComponent,
-        ShowcaseLinkComponent
+        ShowcaseLinkComponent,
+        ShowcaseSubtitleComponent
     ],
   exports: [
     ProjectShowcaseComponent,
@@ -30,7 +32,8 @@ import { ShowcaseLinkComponent } from './showcase-link/showcase-link.component';
     ShowcaseImageComponent,
     ShowcaseDescriptionComponent,
     ShowcaseLinksGroupComponent,
-    ShowcaseLinkComponent
+    ShowcaseLinkComponent,
+    ShowcaseSubtitleComponent
   ],
     imports: [
         CommonModule

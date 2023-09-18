@@ -12,6 +12,7 @@ import { BlockTextComponent } from './core/components/block-text/block-text.comp
 import { TextChipComponent } from './core/components/text-chip/text-chip.component';
 import { TabsModule } from "./features/tabs/tabs.module";
 import {ProjectShowcaseModule} from "./features/project-showcase/project-showcase.module";
+import {ProjectsModule} from "./features/projects/projects.module";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {ProjectShowcaseModule} from "./features/project-showcase/project-showcas
         BrowserAnimationsModule,
         MatIconModule,
         TabsModule,
-        ProjectShowcaseModule
+        ProjectShowcaseModule,
+        ProjectsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

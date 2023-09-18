@@ -2,10 +2,10 @@
   <div class="flex">
     <div *ngIf="isScroll$ | async" (click)="scrollBack()" class="px-3 py-2 cursor-pointer select-none"><</div>
       <div class="flex-grow flex justify-between overflow-x-scroll scroll-container snap-mandatory snap-x" #tabContainer>
-        <div class="text-center flex-grow basis-1/3 sm:basis-1/4 flex-shrink-0 pt-2 text-sm sm:text-lg cursor-pointer snap-start"
+        <div class="text-center flex-grow basis-1/3 sm:basis-1/4 pt-2 text-sm sm:text-lg cursor-pointer snap-start whitespace-nowrap"
              [ngClass]="{'bg-accent bg-opacity-5' : (selectedTab$ | async) == tab}"
-             *ngFor="let tab of tabs" (click)="switchTab(tab)">
-          <div class="mb-2 px-1 select-none">{{tab.label}}</div>
+             *ngFor="let tab of tabs" (click)="switchTab(tab); scrollTo(tabElement)" #tabElement>
+          <div class="mb-2 px-2.5 sm:px-6 select-none">{{tab.label}}</div>
           <div [ngClass]="{'opacity-90' : (selectedTab$ | async) == tab}"
                class="w-full h-[2px] bg-accent opacity-50"></div>
         </div>

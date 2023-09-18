@@ -27,3 +27,8 @@ body {
 .text-gradient {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500;
 }
+
+
+.leading-confined {
+  line-height: 0.9 !important;
+}
