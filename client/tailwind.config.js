@@ -39,8 +39,8 @@ module.exports = {
         },
         slideRightFade: {
           '0%': {
-            opacity: '1',
-            transform: 'translateX(-0.5rem)'
+            opacity: '0',
+            transform: 'translateX(-1rem)'
           },
           '50%': { transform: 'translateX(0)' },
           '100%': { opacity: '1' },
