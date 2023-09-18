@@ -59,6 +59,14 @@ export class TabGroupComponent implements AfterViewInit, OnDestroy {
     return el.scrollWidth > el.offsetWidth;
   }
 
+  scrollTo(el: HTMLElement) {
+    const childRect = el.getBoundingClientRect();
+    const parentRect = this.tabContainer.nativeElement.getBoundingClientRect();
+    const scrollLeft = childRect.left - parentRect.left;
+
+    this.scrollTabs(scrollLeft)
+  }
+
   scrollBack() {
     const scrollAmount = this.tabContainer.nativeElement.clientWidth / 4;
     this.scrollTabs(-scrollAmount);
