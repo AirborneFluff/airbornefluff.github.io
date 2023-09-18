@@ -13,6 +13,9 @@ export class AppComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.scroll(this.devSection.nativeElement);
+    setTimeout(() => {
+      if (!this.devSection?.nativeElement) return;
+      this.scroll(this.devSection.nativeElement);
+    })
   }
 }

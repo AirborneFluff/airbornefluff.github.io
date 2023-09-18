@@ -5,10 +5,10 @@
       <h2 isVisible [delay]="250" class="text-4xl sm:text-6xl animate-fade-in">I am <span class="text-gradient">Morgan Proffitt</span>, a web developer.</h2>
     </header>
 
-    <div class="mt-10">
-      <app-block-text isVisible [delay]="1250" class="animate-jump-fade">
-        Bridging the gap between creativity and technology, using my experience in Angular, .NET, and a variety of languages, including C#, HTML, CSS, and TypeScript.
-      </app-block-text>
+    <div isVisible [delay]="1250" class="mt-10 animate-jump-fade">
+      <p class="text-3xl sm:text-4xl">
+        Bridging the gap between creativity and technology
+      </p>
     </div>
 
     <div class="mt-10">
@@ -82,6 +82,9 @@
       </app-tab>
       <app-tab label="Stock App">
         <project-stock-app/>
+      </app-tab>
+      <app-tab label="Raffle App">
+        <project-raffle-app/>
       </app-tab>
     </app-tab-group>
   </section>
