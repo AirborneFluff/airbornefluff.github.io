@@ -13,6 +13,8 @@ import { TextChipComponent } from './core/components/text-chip/text-chip.compone
 import { TabsModule } from "./features/tabs/tabs.module";
 import {ProjectShowcaseModule} from "./features/project-showcase/project-showcase.module";
 import {ProjectsModule} from "./features/projects/projects.module";
+import { VisibleTriggerDirective } from './core/common/directives/visible-trigger.directive';
+import { AnimateHiddenDirective } from './core/common/directives/animate-hidden.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import {ProjectsModule} from "./features/projects/projects.module";
     IsVisibleDirective,
     TestModalComponent,
     BlockTextComponent,
-    TextChipComponent
+    TextChipComponent,
+    VisibleTriggerDirective,
+    AnimateHiddenDirective
   ],
     imports: [
         BrowserModule,
