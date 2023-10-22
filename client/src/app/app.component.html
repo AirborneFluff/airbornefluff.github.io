@@ -39,17 +39,15 @@
         <app-text-chip [special]="true">C</app-text-chip>
         <app-text-chip>HTML</app-text-chip>
         <app-text-chip>CSS</app-text-chip>
-        <app-text-chip>C++</app-text-chip>
-        <app-text-chip>VBA</app-text-chip>
       </div>
     </div>
 
     <div animateHidden [delay]="300" class="animate-jump-fade animation-persist">
       <h2 class="mt-6 mb-2">libraries</h2>
       <div class="flex gap-1 w-full flex-wrap [&>*]:basis-12">
+        <app-text-chip [special]="true">RxJS</app-text-chip>
         <app-text-chip>Tailwind</app-text-chip>
         <app-text-chip>Bootstrap</app-text-chip>
-        <app-text-chip>RxJS</app-text-chip>
       </div>
     </div>
 
@@ -58,9 +56,7 @@
       <div class="flex gap-1 w-full flex-wrap [&>*]:basis-12">
         <app-text-chip [special]="true">Github</app-text-chip>
         <app-text-chip [special]="true">Figma</app-text-chip>
-        <app-text-chip [special]="true">Fusion 360</app-text-chip>
         <app-text-chip>Azure</app-text-chip>
-        <app-text-chip>Node</app-text-chip>
       </div>
     </div>
   </section>
@@ -74,17 +70,17 @@
     <p animateHidden [delay]="600" class="animate-jump-fade mt-4 sm:mt-16">With a primary emphasis on web applications, here is a showcase of some of my noteworthy projects.</p>
 
     <app-tab-group animateHidden [delay]="300" class="mt-4 sm:mt-12 animate-slide-right-fade" [tabIndex]="0">
-      <app-tab label="Dating App">
-        <project-dating-app/>
-      </app-tab>
-      <app-tab label="Energy Storage">
-        <project-energy-storage-app/>
+      <app-tab label="Eldraws">
+        <project-raffle-app/>
       </app-tab>
       <app-tab label="Stock App">
         <project-stock-app/>
       </app-tab>
-      <app-tab label="Raffle App">
-        <project-raffle-app/>
+      <app-tab label="Energy Storage">
+        <project-energy-storage-app/>
+      </app-tab>
+      <app-tab label="Dating App">
+        <project-dating-app/>
       </app-tab>
     </app-tab-group>
   </section>
